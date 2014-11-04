@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
+	
+	serialize :favorite_articles, Array
+
 	#Associations
 	has_many :preferences
 
 	def custom_to_json
-      to_json(include: :preferences)
+      to_json(include: [:preferences, :favorite_articles])
 	end
 
 end
