@@ -61,4 +61,17 @@ module.exports = function(app) {
 		});
 
   	}
+  	obtenerFacturas = function(req,res){
+  		Factura.find({}, function (err, facturas){
+	        if (err) return res.send(err, 500);
+	        res.send(facturas, 200);
+	      });
+  	}
+  	obtenerFactura = function(req,res){
+  		Factura.findOne({'numero':req.params.id}, function (err, factura){
+	        if (err) return res.send(err, 500);
+	        if (!factura) return res.send('No se encuentra la factura', 404);
+	        res.send(factura, 200); 
+	      });
+  	}
 }

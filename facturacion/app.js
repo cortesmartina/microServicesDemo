@@ -13,7 +13,8 @@ app.configure(function () {
 });
 
 app.post('/factura', crearFactura); 
-//app.get('/factura/:id', obtenerFactura);
+app.get('/factura', obtenerFacturas);
+app.get('/factura/:numero', obtenerFactura);
 
 var connection = mongoose.connect('mongodb://localhost:32000', function(err, res) {
   if(err) {
