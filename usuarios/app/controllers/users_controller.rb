@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def show
+		respond_to do |format|
+			format.json{ render json: User.find(params[:id]).custom_to_json }
+		end
+	end
+
 	def add_favorite
 		user = User.find(params[:id])
 		user.favorite_articles << params[:articulo_id]
