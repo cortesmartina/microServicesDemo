@@ -1,7 +1,7 @@
 [{
     "usuario": 1,
-    "favoritos": [1,3,5],
-    "recomendados": [2,3,6]
+    "favoritos": ["Detergente Magistral","Papel higiénico Scott","Lavarropas Mabe"],
+    "recomendados": ["Chocolate Aguila","Bonobon","Chocoarroz"]
 },{
     "usuario": 2,
     "favoritos": [2,3,5],

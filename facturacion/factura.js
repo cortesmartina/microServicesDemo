@@ -6,7 +6,6 @@ var facturaSchema = new Schema({
   cliente : { type : String },
   articulos:   [ { descripcion: { type : String } , cantidad: { type : Number } , precio_unitario: { type : Number } } ],
   subtotal:   {type: Number},
-  impuestos:    {type: Number},
   total:    {type: Number}
 });
 

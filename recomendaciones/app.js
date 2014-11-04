@@ -26,7 +26,7 @@ app.configure('development', function(){
 });
 
 app.get('/recomendacion/usuario/:id', recomendacion.get);
-app.post('/recomendacion/activar_regla/:id', recomendacion.setRule);
+app.put('/recomendacion/activar_regla/:id', recomendacion.setRule);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

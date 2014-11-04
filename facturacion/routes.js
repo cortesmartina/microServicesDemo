@@ -8,7 +8,7 @@ module.exports = function(app) {
   	}
   	crearFactura = function(req, res) {
     	var articuloSolicitado = req.body.articulos[0];
-		var url = "http://localhost:8080/articulo/"+articuloSolicitado.id;
+		var url = "http://localhost:3000/articulo/"+articuloSolicitado.id;
 		http.get(url, function(resHttp) {
 			var body = '';
 		    resHttp.on('data', function(chunk) {
@@ -68,7 +68,7 @@ module.exports = function(app) {
 	      });
   	}
   	obtenerFactura = function(req,res){
-  		Factura.findOne({'numero':req.params.id}, function (err, factura){
+  		Factura.findOne({numero:req.params.numero}, function (err, factura){
 	        if (err) return res.send(err, 500);
 	        if (!factura) return res.send('No se encuentra la factura', 404);
 	        res.send(factura, 200); 
